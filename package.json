@@ -9,6 +9,7 @@
     "rollback": "knex migrate:rollback",
     "seed": "knex seed:run",
     "migrateh": "heroku run knex migrate:latest -a bw-water-my-plants-07-back-end",
+    "migratehd": "heroku run knex migrate:down -a bw-water-my-plants-07-back-end",
     "rollbackh": "heroku run knex migrate:rollback -a bw-water-my-plants-07-back-end",
     "databaseh": "heroku pg:psql -a bw-water-my-plants-07-back-end",
     "seedh": "heroku run knex seed:run -a bw-water-my-plants-07-back-end",
