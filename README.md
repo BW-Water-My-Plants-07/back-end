@@ -24,6 +24,9 @@
 `[POST]` /api/plants/
 
 * NEED AUTHORIZATION HEADER
+* Update the info of a given plant
+
+Fields:
 * nickname
 * species
 * h2oFrequency: enum \*\*
@@ -44,3 +47,7 @@
 
 * NEED AUTHORIZATION HEADER
 * update user info of LOGGED IN User
+
+Fields:
+* username
+* phoneNumber
