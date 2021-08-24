@@ -1,4 +1,4 @@
-const authRouter = require('express').Router();
+const router = require('express').Router();
 const { JWT_SECRET } = require('../secrets');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -6,7 +6,7 @@ const User = require('../users/users-model');
 const { checkUsernameExists } = require('../middleware/restricted')
 
 // Register user
-authRouter.post('/register', (req, res, next) => {
+router.post('/register', (req, res, next) => {
       const { username, password, phoneNumber } = req.body
         if (!phoneNumber || !phoneNumber.trim()) {
             next({ status: 401, message: 'username and password required' }) 
@@ -21,7 +21,7 @@ authRouter.post('/register', (req, res, next) => {
 });
 
 // Login user
-authRouter.post('/login', checkUsernameExists, (req, res, next) => {
+router.post('/login', checkUsernameExists, (req, res, next) => {
   if (bcrypt.compareSync(req.body.password, req.user.password)) {
     const token = buildToken(req.user)
     res.json({
@@ -53,4 +53,4 @@ function buildToken(user) {
   return jwt.sign(payload, JWT_SECRET, options)
 }
 
-module.exports = authRouter;
+module.exports = router;
