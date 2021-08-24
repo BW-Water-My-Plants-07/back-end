@@ -2,7 +2,7 @@ const router = require("express").Router();
 const Plants = require("../plants/plants-model");
 
 router.get("/", (req, res, next) => {
-    Plants.findByUserId(1)
+    Plants.findByUserId(req.decodedToken.subject)
         .then(plants => {
             res.json(plants);
         })

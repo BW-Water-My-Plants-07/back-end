@@ -5,8 +5,8 @@ exports.seed = async function (knex) {
     await knex('users').insert([
         {
             username: 'nora',
-            password: 'flowerfairyprincess',
-            phoneNumber: '9703673043'
+            password: '$2a$08$YVcmUvuYzh36MwHYRwTJQuxpoB7MfRWyVOVIXlbh805qsVY7r062K',
+            phoneNumber: '9701112222'
         },
     ])
     await knex('plants').insert([
