@@ -25,11 +25,20 @@ async function add(user) {
     const [id] = await db('users').insert(user, ['user_id'])
     return findById(id.user_id)
 }
+
+// edit
+async function update(user_id, user) {
+    await db('users')
+        .where('user_id',user_id)
+        .update(user)
+    return findById(user_id)
+}
   
 // Don't forget to add these to the `exports` object so they can be required in other modules
 module.exports = {
     find,
     findBy,
     findById,
-    add
+    add,
+    update
 }
