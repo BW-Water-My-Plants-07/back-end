@@ -2,7 +2,13 @@ const router = require("express").Router();
 const Users = require("./users-model")
 
 // GET user - read info
-
+router.get("/", (req, res, next) => {
+    Users.findById(req.decodedToken.subject)
+        .then(users => {
+            res.json(users);
+        })
+        .catch(next);
+})
 
 // PUT user - edit info
 router.put("/", async (req, res, next) => {
