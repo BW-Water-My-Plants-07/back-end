@@ -1,6 +1,6 @@
 # Endpoints
 
-----AUTH----
+`----AUTH----
 [POST] /api/auth/login
 [POST] /api/auth/register
 
@@ -30,4 +30,4 @@
 
 [PUT] /api/users
 	- NEED AUTHORIZATION HEADER
-	- update user info of LOGGED IN User
+	- update user info of LOGGED IN User`
