@@ -19,7 +19,6 @@ router.get("/:id", (req, res, next) => {
         .catch(next);
 })
 
-
 // POST add a plant
 router.post("/", (req, res, next) => {
     const plant = req.body
@@ -30,8 +29,6 @@ router.post("/", (req, res, next) => {
         })
         .catch(next)
 })
-
-
 
 // PUT edit a plant
 router.put("/:id", async (req, res, next) => {
@@ -58,8 +55,6 @@ router.put("/:id", async (req, res, next) => {
     }
 })
 
-
-
 // DELETE remove a plant
 router.delete("/:id", async (req, res, next) => {
     const [lookupPlant] = await Plants.findById(req.params.id, req.decodedToken.subject)
@@ -80,7 +75,5 @@ router.delete("/:id", async (req, res, next) => {
         }
     }
 })
-
-
 
 module.exports = router; 
