@@ -30,9 +30,9 @@ Fields:
 * nickname
 * species
 * h2oFrequency: enum \*\*
-* image: link or path 
+* image: link or path (optional)
 
-\*\* **Options** [ 'none', 'daily', 'twice a week', 'weekly', 'every two weeks', 'every three weeks' ]
+\*\* **Options:** [ 'none', 'daily', 'twice a week', 'weekly', 'every two weeks', 'every three weeks' ]
 
 
 
