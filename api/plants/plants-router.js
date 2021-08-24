@@ -37,7 +37,26 @@ router.post("/", (req, res, next) => {
 
 
 
-//TODO DELETE remove a plant
+// DELETE remove a plant
+router.delete("/:id", async (req, res, next) => {
+    const [lookup] = await Plants.findById(req.params.id, req.decodedToken.subject)
+    if (!lookup) {
+        res.status(404).json({
+            message: "A plant with that ID doesn't exist"
+        })
+    } else {
+        try {
+            const deletedPlant = await Plants.remove(lookup.plant_id, lookup.user_id)
+            res.status(200).json(`Deleted ${deletedPlant} plant`)
+        }
+        catch (err) {
+            res.status(500).json({
+                message: "Hmm, that plant couldn't be removed!",
+                err: err.message
+            })
+        }
+    }
+})
 
 
 

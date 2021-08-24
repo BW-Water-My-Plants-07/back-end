@@ -21,12 +21,17 @@ async function add(plant) {
 
 
 // TODO delete
-
+function remove(id, user_id) {
+    return db('plants')
+        .where({'plant_id':id, 'user_id':user_id})
+        .del()
+}
 
 module.exports = {
     findByUserId,
     findById,
-    add
+    add,
+    remove,
 };
 
 
