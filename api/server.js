@@ -2,6 +2,9 @@ const express = require('express')
 const cors = require('cors')
 const helmet = require('helmet')
 const db = require('../data/db-config')
+// const { findByUserId } = require('./plants/plants-model')
+
+const plantsRouter = require('./plants/plants-router');
 
 function getAllUsers() { return db('users') }
 
@@ -25,5 +28,7 @@ server.get('/api/users', async (req, res) => {
 server.post('/api/users', async (req, res) => {
   res.status(201).json(await insertUser(req.body))
 })
+
+server.use('/api/plants', plantsRouter);
 
 module.exports = server

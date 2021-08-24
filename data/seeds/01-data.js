@@ -1,5 +1,5 @@
 exports.seed = async function (knex) {
-    await knex('users').truncate()
+    // await knex('users').truncate()
     await knex('plants').truncate()
 
     await knex('users').insert([
@@ -11,6 +11,7 @@ exports.seed = async function (knex) {
     ])
     await knex('plants').insert([
         {
+            user_id: 1,
             nickname: 'fluffy',
             species: 'asparagus fern',
             h2oFrequency: 'twice a week',

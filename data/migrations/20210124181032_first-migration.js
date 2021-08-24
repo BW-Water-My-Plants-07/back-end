@@ -22,6 +22,13 @@ exports.up = async (knex) => {
        * image (optional)
       */
       plants.increments('plant_id')
+      plants.integer('user_id')
+        .unsigned()
+        .notNullable()
+        .references('user_id')
+        .inTable('users')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE')
       plants.string('nickname', 128).notNullable()
       plants.string('species', 200).notNullable()
       plants.enu('h2oFrequency', [ 'none', 'daily', 'twice a week', 'weekly', 'every two weeks', 'every three weeks', ]).notNullable()
