@@ -24,12 +24,15 @@
 `[POST]` /api/plants/
 
 * NEED AUTHORIZATION HEADER
+* Update the info of a given plant
+
+Fields:
 * nickname
 * species
 * h2oFrequency: enum \*\*
-* image: link or path 
+* image: link or path (optional)
 
-\*\* **Options** [ 'none', 'daily', 'twice a week', 'weekly', 'every two weeks', 'every three weeks' ]
+\*\* **Options:** [ 'none', 'daily', 'twice a week', 'weekly', 'every two weeks', 'every three weeks' ]
 
 
 
@@ -44,3 +47,7 @@
 
 * NEED AUTHORIZATION HEADER
 * update user info of LOGGED IN User
+
+Fields:
+* username
+* phoneNumber
