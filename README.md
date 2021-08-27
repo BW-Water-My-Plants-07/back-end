@@ -1,4 +1,5 @@
 # Endpoints
+🌐https://bw-water-my-plants-07-back-end.herokuapp.com/
 
 ## ---AUTH----
 
